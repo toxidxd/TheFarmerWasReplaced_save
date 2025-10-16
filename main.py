@@ -8,18 +8,22 @@ import grow_cactus
 from __builtins__ import clear
 
 
-need_grass_count = 200000
+
+need_grass_count = 0
 need_trees_count = 200000
 need_carrots_count = 100000
 need_pumps_count = 100000
 need_cactus_count = 50000
 
+set_world_size(10)
 
 if num_items(Items.Hay) < need_grass_count:
 	print('Grass')
 	clear()
 	while num_items(Items.Hay) < need_grass_count:
-		grass.planting_grass()
+		# grass.planting_grass()
+		if spawn_drone(grass.planting_grass):
+			move(East)
 
 
 if num_items(Items.Wood) < need_trees_count:
@@ -28,7 +32,8 @@ if num_items(Items.Wood) < need_trees_count:
 	go_till.go_till()
 
 	while num_items(Items.Wood) < need_trees_count:
-		trees_v2.planting_trees()
+		if spawn_drone(trees_v2.harvest_column):
+			move(East)
 
 
 if num_items(Items.Carrot) < need_carrots_count:
