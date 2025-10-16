@@ -30,7 +30,7 @@ def planting_trees():
 			if can_harvest():
 				harvest()
 			plant(Entities.Sunflower)
-			use_item(Items.Fertilizer)
+			# use_item(Items.Fertilizer)
 			move(North)
 		move(East)
 			
