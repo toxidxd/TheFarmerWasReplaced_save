@@ -1,9 +1,3 @@
-# clear()
-# change_hat(Hats.Wizard_Hat)
-#print(num_items(Items.Hay))
-#pet_the_piggy()
-# do_a_flip()
-
 def grow_pump():
 	for i in range(get_world_size()):
 		for j in range(get_world_size()):
@@ -50,12 +44,3 @@ def harvest_pumps():
 			move(North)
 		move(East)
 
-# grow_pump()
-
-# while True:
-# 	second_grow()
-# 	harvest_pumps()
-	
-	
-#pet_the_piggy()
-#do_a_flip()
