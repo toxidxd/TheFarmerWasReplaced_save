@@ -9,10 +9,10 @@ import power
 from __builtins__ import clear
 
 
-need_power_count = 10000
-need_grass_count = 350000
-need_trees_count = 500000
-need_carrots_count = 300000
+need_power_count = 20000
+need_grass_count = 999999
+need_trees_count = 999999
+need_carrots_count = 999999
 need_pumps_count = 4500000
 need_cactus_count = 25000
 
@@ -24,7 +24,7 @@ while True:
 		clear()
 		go_till.go_till()
 
-		while num_items(Items.Power) < need_carrots_count:
+		while num_items(Items.Power) < need_power_count:
 			if spawn_drone(power.harvest_column):
 				move(East)
 
