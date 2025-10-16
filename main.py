@@ -9,14 +9,14 @@ from __builtins__ import clear
 
 
 
-need_grass_count = 0
+need_grass_count = 200000
 need_trees_count = 200000
-need_carrots_count = 100000
-need_pumps_count = 100000
-need_cactus_count = 50000
+need_carrots_count = 200000
+need_pumps_count = 550000
+need_cactus_count = 5000
 
-set_world_size(10)
-
+set_world_size(8)
+# set_execution_speed(10)
 if num_items(Items.Hay) < need_grass_count:
 	print('Grass')
 	clear()
@@ -44,7 +44,8 @@ if num_items(Items.Carrot) < need_carrots_count:
 	while num_items(Items.Carrot) < need_carrots_count:
 		if num_items(Items.Hay) < 100 or num_items(Items.Wood) < 100:
 			break
-		carrots.planting_carrots()
+		if spawn_drone(carrots.harvest_column):
+			move(East)
 		
 
 if num_items(Items.Pumpkin) < need_pumps_count:
