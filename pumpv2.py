@@ -46,7 +46,7 @@ def harvest_pumps():
 			if can_harvest():
 				harvest()
 			plant(Entities.Pumpkin)
-			use_item(Items.Water)
+			#use_item(Items.Water)
 			move(North)
 		move(East)
 
