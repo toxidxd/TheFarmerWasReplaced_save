@@ -11,7 +11,7 @@ def planting_carrots():
 				harvest()
 			plant(Entities.Carrot)
 			use_item(Items.Water)
-			use_item(Items.Fertilizer)
+			#use_item(Items.Fertilizer)
 			move(North)
 		move(East)
 	

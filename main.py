@@ -7,8 +7,8 @@ from __builtins__ import clear
 
 need_grass_count = 32000
 need_trees_count = 32000
-need_carrots_count = 31000
-nees_pumps_count = 32000
+need_carrots_count = 15000
+nees_pumps_count = 64000
 
 if num_items(Items.Hay) < need_grass_count:
 	print('Grass')
@@ -32,7 +32,6 @@ if num_items(Items.Carrot) < need_carrots_count:
 	go_till.go_till()
 
 	while num_items(Items.Carrot) < need_carrots_count:
-		print('Carrots')
 		carrots.planting_carrots()
 
 
@@ -44,5 +43,6 @@ if num_items(Items.Pumpkin) < nees_pumps_count:
 	pumpv2.grow_pump()
 
 	while num_items(Items.Pumpkin) < nees_pumps_count:
-		pumpv2.second_grow()
+		# pumpv2.second_grow()
+		pumpv2.regrow_dead_pump()
 		pumpv2.harvest_pumps()
