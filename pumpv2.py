@@ -1,19 +1,30 @@
-clear()
-change_hat(Hats.Wizard_Hat)
+# clear()
+# change_hat(Hats.Wizard_Hat)
 #print(num_items(Items.Hay))
 #pet_the_piggy()
-do_a_flip()
+# do_a_flip()
 
 def grow_pump():
 	for i in range(get_world_size()):
 		for j in range(get_world_size()):
-			till()
 			use_item(Items.Water)
 			plant(Entities.Pumpkin)		
 			move(North)	
 		move(East)
 
 def second_grow():
+	for i in range(get_world_size()):
+		for j in range(get_world_size()):
+			if get_entity_type() != Entities.Pumpkin:
+				plant(Entities.Pumpkin)
+				use_item(Items.Water)
+			elif get_entity_type() == None:
+				plant(Entities.Pumpkin)
+				use_item(Items.Water)
+			move(North)
+		move(East)
+
+def regrow_dead_pump():
 	for i in range(get_world_size()):
 		for j in range(get_world_size()):
 			if get_entity_type() != Entities.Pumpkin:
@@ -35,11 +46,11 @@ def harvest_pumps():
 			move(North)
 		move(East)
 
-grow_pump()
+# grow_pump()
 
-while True:
-	second_grow()
-	harvest_pumps()
+# while True:
+# 	second_grow()
+# 	harvest_pumps()
 	
 	
 #pet_the_piggy()
