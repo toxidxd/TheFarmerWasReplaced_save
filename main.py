@@ -8,11 +8,11 @@ import grow_cactus
 from __builtins__ import clear
 
 
-need_grass_count = 10000
-need_trees_count = 10000
-need_carrots_count = 5000
-need_pumps_count = 5000
-need_cactus_count = 2000
+need_grass_count = 200000
+need_trees_count = 200000
+need_carrots_count = 100000
+need_pumps_count = 100000
+need_cactus_count = 50000
 
 
 if num_items(Items.Hay) < need_grass_count:
