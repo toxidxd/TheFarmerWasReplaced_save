@@ -11,11 +11,11 @@ from __builtins__ import clear
 
 need_grass_count = 200000
 need_trees_count = 200000
-need_carrots_count = 200000
-need_pumps_count = 550000
-need_cactus_count = 5000
+need_carrots_count = 300000
+need_pumps_count = 4500000
+need_cactus_count = 25000
 
-set_world_size(8)
+# set_world_size(8)
 # set_execution_speed(10)
 if num_items(Items.Hay) < need_grass_count:
 	print('Grass')
