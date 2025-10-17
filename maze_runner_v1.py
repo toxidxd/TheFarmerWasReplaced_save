@@ -1,5 +1,3 @@
-
-
 def gen_maze():
 	plant(Entities.Bush)
 	substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
@@ -11,6 +9,8 @@ def complete_maze():
 		ix += 1 - move(dirs[ix % 4])*2
 	harvest()
 
+# set_world_size(14)
+# set_execution_speed(5)1
 while True:
 	clear()
 	gen_maze()
