@@ -10,16 +10,25 @@ from __builtins__ import clear
 
 
 need_power_count = 20000
-need_grass_count = 99999
-need_trees_count = 99999
-need_carrots_count = 99999
-need_pumps_count = 4500000
-need_cactus_count = 0
+need_grass_count = 100000000
+need_trees_count = 100000000
+need_carrots_count = 100000000
+need_pumps_count = 150000000
+need_cactus_count = 12000
 
-# set_world_size(16)
-# set_execution_speed(10)
+# set_world_size(10)
+# set_execution_speed(5)
 while True:
+	if num_items(Items.Power) < need_power_count:
+		print('Power')
+		clear()
+		go_till.go_till()
 
+		while num_items(Items.Power) < need_power_count:
+			if num_items(Items.Carrot) < 100:
+				break
+			if spawn_drone(power.harvest_column):
+				move(East)
 
 	if num_items(Items.Hay) < need_grass_count:
 		print('Grass')

@@ -58,10 +58,10 @@ def planting_trees():
 		use_item(Items.Fertilizer)
 		use_item(Items.Water)
 
-	if get_entity_type() != Entities.Tree:
-		if can_harvest():
-			harvest()
-		plant(Entities.Sunflower)
+	# if get_entity_type() != Entities.Tree:
+	# 	if can_harvest():
+	# 		harvest()
+	# 	plant(Entities.Sunflower)
 
 def harvest_column():
 	for _ in range(get_world_size()):
