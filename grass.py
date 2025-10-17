@@ -1,7 +1,10 @@
-#clear()
-#pet_the_piggy()
-#do_a_flip()
-#while True:
+from __builtins__ import *
+
+
+# clear()
+# pet_the_piggy()
+# do_a_flip()
+# while True:
 
 # def planting_grass():
 # 	for i in range(get_world_size()):	
@@ -13,7 +16,6 @@
 
 
 def planting_grass():
-	for _ in range(get_world_size()):
-		harvest()
-		move(North)
-
+    for _ in range(get_world_size()):
+        harvest()
+        move(North)
