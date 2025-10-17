@@ -18,13 +18,13 @@ def complete_maze():
 	harvest()
 	clear()
 
-set_world_size(6)
+set_world_size(8)
 # set_execution_speed(5)1
 clear()
 while True:
 	gen_maze()
 
-	for i in range(5):
+	for i in range(10):
 		print(i)
 		run_maze()
 
