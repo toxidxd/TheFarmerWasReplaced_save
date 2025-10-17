@@ -12,9 +12,9 @@ from __builtins__ import clear
 need_power_count = 20000
 need_grass_count = 10000000
 need_trees_count = 10000000
-need_carrots_count = 10000000
+need_carrots_count = 1000000000
 need_pumps_count = 10000000
-need_cactus_count = 100000000
+need_cactus_count = 15000000
 
 # set_world_size(10)
 # set_execution_speed(5)
