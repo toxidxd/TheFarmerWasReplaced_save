@@ -7,7 +7,8 @@ def run_maze():
 	ix, dirs = 0, [East, South, West, North]
 	while get_entity_type() != Entities.Treasure:
 		ix += 1 - move(dirs[ix % 4])*2
-		substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
+
+	substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
 	use_item(Items.Weird_Substance, substance)
 
 def complete_maze():
@@ -17,13 +18,14 @@ def complete_maze():
 	harvest()
 	clear()
 
-set_world_size(10)
+set_world_size(6)
 # set_execution_speed(5)1
 clear()
 while True:
 	gen_maze()
 
-	for i in range(300):
+	for i in range(5):
+		print(i)
 		run_maze()
 
 	complete_maze()
