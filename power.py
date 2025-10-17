@@ -1,8 +1,4 @@
-# clear()
-# change_hat(Hats.Carrot_Hat)
-#pet_the_piggy()
-#do_a_flip()
-# print(num_items(Items.Carrot))
+from __builtins__ import *
 
 def planting_sunflowers():
 	if can_harvest():

@@ -6,7 +6,7 @@ import pumpv2
 import grow_cactus
 import power
 
-from __builtins__ import clear
+from __builtins__ import *
 
 
 need_power_count = 20000
