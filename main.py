@@ -10,11 +10,11 @@ from __builtins__ import clear
 
 
 need_power_count = 20000
-need_grass_count = 100000000
-need_trees_count = 100000000
-need_carrots_count = 100000000
-need_pumps_count = 150000000
-need_cactus_count = 12000
+need_grass_count = 1000000
+need_trees_count = 1000000
+need_carrots_count = 1000000
+need_pumps_count = 1000000
+need_cactus_count = 1000000
 
 # set_world_size(10)
 # set_execution_speed(5)
@@ -25,7 +25,7 @@ while True:
 		go_till.go_till()
 
 		while num_items(Items.Power) < need_power_count:
-			if num_items(Items.Carrot) < 100:
+			if num_items(Items.Carrot) < 1000:
 				break
 			if spawn_drone(power.harvest_column):
 				move(East)
@@ -67,7 +67,7 @@ while True:
 		go_till.go_till()
 
 		while num_items(Items.Power) < need_power_count:
-			if num_items(Items.Carrot) < 100:
+			if num_items(Items.Carrot) < 1000:
 				break
 			if spawn_drone(power.harvest_column):
 				move(East)
@@ -82,7 +82,7 @@ while True:
 		pumpv2.grow_pump()
 
 		while num_items(Items.Pumpkin) < need_pumps_count:
-			if num_items(Items.Carrot) < 100:
+			if num_items(Items.Carrot) < 1000:
 				break
 			# pumpv2.second_grow()
 			if spawn_drone(pumpv2.harvest_pumps):
@@ -90,6 +90,16 @@ while True:
 			# pumpv2.regrow_dead_pump()
 			# pumpv2.harvest_pumps()
 
+	if num_items(Items.Power) < need_power_count:
+		print('Power')
+		clear()
+		go_till.go_till()
+
+		while num_items(Items.Power) < need_power_count:
+			if num_items(Items.Carrot) < 1000:
+				break
+			if spawn_drone(power.harvest_column):
+				move(East)
 
 	if num_items(Items.Cactus) < need_cactus_count:
 		print('Cactus')
@@ -97,6 +107,6 @@ while True:
 		go_till.go_till()
 
 		while num_items(Items.Cactus) < need_cactus_count:
-			if num_items(Items.Pumpkin) < 100:
+			if num_items(Items.Pumpkin) < 1000:
 				break
 			grow_cactus.planting_cactus()
