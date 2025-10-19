@@ -16,6 +16,6 @@ from __builtins__ import *
 
 
 def planting_grass():
-    for _ in range(get_world_size()):
-        harvest()
-        move(North)
+	for _ in range(get_world_size()):
+		harvest()
+		move(North)

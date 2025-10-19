@@ -2,8 +2,8 @@ from __builtins__ import *
 
 
 def grow_pump():
-    use_item(Items.Water)
-    plant(Entities.Pumpkin)
+	use_item(Items.Water)
+	plant(Entities.Pumpkin)
 
 
 # def second_grow():
@@ -30,9 +30,9 @@ def grow_pump():
 
 
 def harvest_pumps():
-    for _ in range(get_world_size()):
-        if can_harvest():
-            harvest()
-        plant(Entities.Pumpkin)
-        move(North)
+	for _ in range(get_world_size()):
+		if can_harvest():
+			harvest()
+		plant(Entities.Pumpkin)
+		move(North)
 # use_item(Items.Water)

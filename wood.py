@@ -5,7 +5,7 @@ change_hat(Hats.Traffic_Cone)
 
 
 def is_even(n):
-    return n % 2 == 0
+	return n % 2 == 0
 
 
 # def go_till():
@@ -41,27 +41,27 @@ def is_even(n):
 
 
 def planting_trees():
-    # if get_entity_type() == Entities.Tree:
-    # 	if can_harvest():
-    # 		harvest()
-    # 	use_item(Items.Fertilizer)
-    # 	use_item(Items.Water)
+	# if get_entity_type() == Entities.Tree:
+	# 	if can_harvest():
+	# 		harvest()
+	# 	use_item(Items.Fertilizer)
+	# 	use_item(Items.Water)
 
-    if is_even(get_pos_x()) and not is_even(get_pos_y()):
-        # if is_even(get_pos_y()):
-        if can_harvest():
-            harvest()
-        plant(Entities.Tree)
-        use_item(Items.Fertilizer)
-        use_item(Items.Water)
+	if is_even(get_pos_x()) and not is_even(get_pos_y()):
+		# if is_even(get_pos_y()):
+		if can_harvest():
+			harvest()
+		plant(Entities.Tree)
+		use_item(Items.Fertilizer)
+		use_item(Items.Water)
 
-    if not is_even(get_pos_x()) and is_even(get_pos_y()):
-        # if not is_even(get_pos_y()):
-        if can_harvest():
-            harvest()
-        plant(Entities.Tree)
-        use_item(Items.Fertilizer)
-        use_item(Items.Water)
+	if not is_even(get_pos_x()) and is_even(get_pos_y()):
+		# if not is_even(get_pos_y()):
+		if can_harvest():
+			harvest()
+		plant(Entities.Tree)
+		use_item(Items.Fertilizer)
+		use_item(Items.Water)
 
 
 # if get_entity_type() != Entities.Tree:
@@ -70,6 +70,6 @@ def planting_trees():
 # 	plant(Entities.Sunflower)
 
 def harvest_column():
-    for _ in range(get_world_size()):
-        planting_trees()
-        move(North)
+	for _ in range(get_world_size()):
+		planting_trees()
+		move(North)
