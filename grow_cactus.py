@@ -8,12 +8,10 @@ from __builtins__ import *
 # print(num_items(Items.Carrot))
 
 def planting_cactus():
-    for i in range(get_world_size()):
-        for j in range(get_world_size()):
-            if can_harvest():
-                harvest()
-            plant(Entities.Cactus)
-            use_item(Items.Water)
-            # use_item(Items.Fertilizer)
-            move(North)
-        move(East)
+	for _ in range(get_world_size()):
+		if can_harvest():
+			harvest()
+		plant(Entities.Cactus)
+		use_item(Items.Water)
+		# use_item(Items.Fertilizer)
+		move(North)
