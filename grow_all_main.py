@@ -12,7 +12,7 @@ need_hay_count = 1000000
 need_wood_count = 1000000
 need_carrot_count = 1000000
 need_pumpkin_count = 1000000
-need_cactus_count = 10000000
+need_cactus_count = 16000000
 need_sunflower_count = 10000
 
 # set_world_size(10)
