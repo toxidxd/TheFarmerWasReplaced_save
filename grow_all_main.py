@@ -13,17 +13,17 @@ need_wood_count = 1000000
 need_carrot_count = 1000000
 need_pumpkin_count = 1000000
 need_cactus_count = 16000000
-need_sunflower_count = 10000
+need_power_count = 10000
 
 # set_world_size(10)
 # set_execution_speed(5)
 while True:
-	if num_items(Items.Power) < need_sunflower_count:
-		print('Power')
+	if num_items(Items.Power) < need_power_count:
+		print('Sunflower')
 		clear()
 		grow_till_field.go_till()
 
-		while num_items(Items.Power) < need_sunflower_count:
+		while num_items(Items.Power) < need_power_count:
 			if num_items(Items.Carrot) < 1000:
 				break
 			if spawn_drone(grow_sunflower.harvest_column):
@@ -57,12 +57,12 @@ while True:
 			if spawn_drone(grow_carrot.harvest_column):
 				move(East)
 
-	if num_items(Items.Power) < need_sunflower_count:
+	if num_items(Items.Power) < need_power_count:
 		print('Power')
 		clear()
 		grow_till_field.go_till()
 
-		while num_items(Items.Power) < need_sunflower_count:
+		while num_items(Items.Power) < need_power_count:
 			if num_items(Items.Carrot) < 1000:
 				break
 			if spawn_drone(grow_sunflower.harvest_column):
@@ -84,12 +84,12 @@ while True:
 		# pumpv2.regrow_dead_pump()
 		# pumpv2.harvest_pumps()
 
-	if num_items(Items.Power) < need_sunflower_count:
+	if num_items(Items.Power) < need_power_count:
 		print('Power')
 		clear()
 		grow_till_field.go_till()
 
-		while num_items(Items.Power) < need_sunflower_count:
+		while num_items(Items.Power) < need_power_count:
 			if num_items(Items.Carrot) < 1000:
 				break
 
