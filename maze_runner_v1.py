@@ -1,4 +1,4 @@
-
+from __builtins__ import *
 
 def gen_maze():
 	plant(Entities.Bush)
