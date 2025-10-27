@@ -1,16 +1,33 @@
 from __builtins__ import *
+import grow_till_field
 
 
-def planting_sunflowers():
-    if can_harvest():
-        harvest()
-    plant(Entities.Sunflower)
-    use_item(Items.Water)
-
-
-# use_item(Items.Fertilizer)
-
-def harvest_column():
-    for _ in range(get_world_size()):
-        planting_sunflowers()
+def drone_task():
+    # for _ in range(get_world_size()):
+    while True:
+        if can_harvest():
+            harvest()
+        plant(Entities.Sunflower)
+        if get_water() < 0.50:
+            use_item(Items.Water)
         move(North)
+
+
+def planting_sunflower(need_count=0):
+    clear()
+    change_hat(Hats.Sunflower_Hat)
+    grow_till_field.go_till()
+    while num_items(Items.Power) < need_count:
+        if spawn_drone(drone_task):
+            move(East)
+        else:
+            drone_task()
+
+
+def main():
+    print('Sunflower')
+    planting_sunflower(1000000000)
+
+
+if __name__ == '__main__':
+    main()

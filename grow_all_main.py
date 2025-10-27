@@ -9,17 +9,7 @@ import grow_till_field
 from __builtins__ import *
 
 
-def get_power():
-    if num_items(Items.Power) < 1000 < num_items(Items.Carrot):
-        print('Sunflower')
-        clear()
-        grow_till_field.go_till()
 
-        while num_items(Items.Power) < need_power_count:
-            if num_items(Items.Carrot) < 1000 or num_items(Items.Power) > need_power_count:
-                break
-            if spawn_drone(grow_sunflower.harvest_column):
-                move(East)
 
 
 need_hay_count = 1000000
@@ -80,3 +70,4 @@ while True:
         need_carrot_count *= 10
         need_pumpkin_count *= 10
         need_cactus_count *= 10
+        need_power_count *= 10
