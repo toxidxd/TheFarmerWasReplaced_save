@@ -20,7 +20,6 @@ def drone_task():
 
 
 def planting_grass(need_count=0):
-    print('Grass')
     clear()
     change_hat(Hats.Cactus_Hat)
     while num_items(Items.Hay) < need_count:
@@ -29,7 +28,7 @@ def planting_grass(need_count=0):
 
 
 def main():
-    print('Infinite')
+    print('Hay')
     planting_grass(1000000000)
 
 if __name__ == '__main__':

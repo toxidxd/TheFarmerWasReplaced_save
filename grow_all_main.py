@@ -33,18 +33,10 @@ need_power_count = 10000
 # set_execution_speed(5)
 while True:
     if num_items(Items.Hay) < need_hay_count:
-        clear()
         grow_hay.planting_grass(need_hay_count)
 
     if num_items(Items.Wood) < need_wood_count:
-        print('Trees')
-        clear()
-        grow_till_field.go_till()
-
-        while num_items(Items.Wood) < need_wood_count:
-            get_power()
-            if spawn_drone(grow_wood.harvest_column):
-                move(East)
+        grow_wood.planting_trees(need_wood_count)
 
     if num_items(Items.Carrot) < need_carrot_count:
         print('Carrots')
