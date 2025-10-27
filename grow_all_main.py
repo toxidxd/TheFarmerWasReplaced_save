@@ -26,29 +26,23 @@ need_hay_count = 2000000
 need_wood_count = 2000000
 need_carrot_count = 1500000
 need_pumpkin_count = 1000000
-need_cactus_count = 16000000
+need_cactus_count = 100000000
 need_power_count = 10000
 
 # set_world_size(10)
 # set_execution_speed(5)
 while True:
     if num_items(Items.Hay) < need_hay_count:
+        print('Hay')
         grow_hay.planting_grass(need_hay_count)
 
     if num_items(Items.Wood) < need_wood_count:
+        print('Wood')
         grow_wood.planting_trees(need_wood_count)
 
     if num_items(Items.Carrot) < need_carrot_count:
         print('Carrots')
-        clear()
-        grow_till_field.go_till()
-
-        while num_items(Items.Carrot) < need_carrot_count:
-            get_power()
-            if num_items(Items.Hay) < 100 or num_items(Items.Wood) < 100:
-                break
-            if spawn_drone(grow_carrot.harvest_column):
-                move(East)
+        grow_carrot.planting_carrot(need_carrot_count)
 
     if num_items(Items.Pumpkin) < need_pumpkin_count:
         print('Pumps')

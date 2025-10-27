@@ -31,5 +31,6 @@ def main():
     print('Hay')
     planting_grass(1000000000)
 
+
 if __name__ == '__main__':
     main()
