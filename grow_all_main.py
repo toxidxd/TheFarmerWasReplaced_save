@@ -22,11 +22,11 @@ def get_power():
                 move(East)
 
 
-need_hay_count = 2000000
-need_wood_count = 2000000
-need_carrot_count = 1500000
+need_hay_count = 1000000
+need_wood_count = 1000000
+need_carrot_count = 1000000
 need_pumpkin_count = 1000000
-need_cactus_count = 100000000
+need_cactus_count = 1000000
 need_power_count = 10000
 
 # set_world_size(10)
@@ -73,3 +73,10 @@ while True:
 
             if spawn_drone(grow_cactus.planting_cactus):
                 move(East)
+
+    else:
+        need_hay_count *= 10
+        need_wood_count *= 10
+        need_carrot_count *= 10
+        need_pumpkin_count *= 10
+        need_cactus_count *= 10

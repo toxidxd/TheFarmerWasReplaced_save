@@ -78,6 +78,8 @@ def planting_trees(need_count):
     while num_items(Items.Wood) < need_count:
         if spawn_drone(drone_task):
             move(East)
+        else:
+            drone_task()
 
 def main():
     print('Wood')
