@@ -1,38 +1,39 @@
 from __builtins__ import *
+import grow_till_field
 
 
-def grow_pump():
-    use_item(Items.Water)
-    plant(Entities.Pumpkin)
+def drone_task():
+    change_hat(Hats.Pumpkin_Hat)
+    dead = 0
+
+    while True:
+        if get_entity_type() != Entities.Pumpkin:
+            plant(Entities.Pumpkin)
+        elif get_entity_type() == Entities.Dead_Pumpkin:
+            plant(Entities.Pumpkin)
+            dead += 1
+
+        if get_water() < 0.70 and num_items(Items.Water) > 1000:
+            use_item(Items.Water)
 
 
-# def second_grow():
-#     if get_entity_type() != Entities.Pumpkin:
-#         plant(Entities.Pumpkin)
-#         use_item(Items.Water)
-#     elif get_entity_type() == None:
-#         plant(Entities.Pumpkin)
-#         use_item(Items.Water)
-
-
-# def regrow_dead_pump():
-#     no_dead_pumps = 128
-#     while no_dead_pumps > 2:
-#         no_dead_pumps = 0
-
-#         if get_entity_type() == Entities.Dead_Pumpkin:
-#             plant(Entities.Pumpkin)
-#             use_item(Items.Water)
-#             no_dead_pumps += 1
-#         elif get_entity_type() == None:
-#             plant(Entities.Pumpkin)
-#             use_item(Items.Water)
-
-
-def harvest_pumps():
-    for _ in range(get_world_size()):
-        if can_harvest():
-            harvest()
-        plant(Entities.Pumpkin)
         move(North)
-# use_item(Items.Water)
+
+
+def planting_pumpkin(need_count=0):
+    clear()
+    grow_till_field.go_till()
+    while num_items(Items.Pumpkin) < need_count:
+        if spawn_drone(drone_task):
+            move(East)
+        else:
+            drone_task()
+
+
+def main():
+    print('Pumpkin')
+    planting_pumpkin(1000000000)
+
+
+if __name__ == '__main__':
+    main()
