@@ -5,10 +5,10 @@ import grow_till_field
 def drone_task():
     # for _ in range(get_world_size()):
     while True:
-        if can_harvest():
-            harvest()
+        # if can_harvest():
+        harvest()
         plant(Entities.Sunflower)
-        if get_water() < 0.50:
+        if get_water() < 0.70 and num_items(Items.Water) > 1000:
             use_item(Items.Water)
         move(North)
 

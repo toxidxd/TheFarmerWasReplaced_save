@@ -4,20 +4,31 @@ import grow_till_field
 
 def drone_task():
     change_hat(Hats.Pumpkin_Hat)
-    dead = 0
 
     while True:
-        if get_entity_type() != Entities.Pumpkin:
-            plant(Entities.Pumpkin)
-        elif get_entity_type() == Entities.Dead_Pumpkin:
-            plant(Entities.Pumpkin)
-            dead += 1
 
-        if get_water() < 0.70 and num_items(Items.Water) > 1000:
-            use_item(Items.Water)
+        for _ in range(get_world_size()):
+            if get_entity_type() != Entities.Pumpkin:
+                plant(Entities.Pumpkin)
+            elif get_entity_type() == Entities.Dead_Pumpkin:
+                plant(Entities.Pumpkin)
 
+            if get_water() < 0.70 and num_items(Items.Water) > 1000:
+                use_item(Items.Water)
 
-        move(North)
+            move(North)
+
+        # while True:
+        #     for _ in range(get_world_size()):
+        #         if get_entity_type() != Entities.Pumpkin:
+        #             plant(Entities.Pumpkin)
+        #         elif get_entity_type() == Entities.Dead_Pumpkin:
+        #             plant(Entities.Pumpkin)
+        #
+        #         if get_water() < 0.70 and num_items(Items.Water) > 1000:
+        #             use_item(Items.Water)
+        #
+        #         move(North)
 
 
 def planting_pumpkin(need_count=0):
