@@ -2,21 +2,21 @@ from __builtins__ import *
 import grow_till_field
 
 
-def drone_task():
+def drone_task(count = None):
     change_hat(Hats.Pumpkin_Hat)
 
     while True:
 
-        # for _ in range(get_world_size()*3):
-        #     if get_entity_type() != Entities.Pumpkin:
-        #         plant(Entities.Pumpkin)
-        #     elif get_entity_type() == Entities.Dead_Pumpkin:
-        #         plant(Entities.Pumpkin)
-        #
-        #     # if get_water() < 0.70 and num_items(Items.Water) > 1000:
-        #     #     use_item(Items.Water)
-        #
-        #     move(North)
+        for _ in range(get_world_size()*3):
+            if get_entity_type() != Entities.Pumpkin:
+                plant(Entities.Pumpkin)
+            elif get_entity_type() == Entities.Dead_Pumpkin:
+                plant(Entities.Pumpkin)
+
+            if get_water() < 0.70 and num_items(Items.Water) > 1000:
+                use_item(Items.Water)
+
+            move(North)
 
         for _ in range(get_world_size()):
             if get_entity_type() != Entities.Pumpkin:
