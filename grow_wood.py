@@ -6,7 +6,7 @@ def is_even(n):
     return n % 2 == 0
 
 
-def drone_task():
+def drone_task(count = None):
     change_hat(Hats.Traffic_Cone)
 
     while True:
@@ -26,6 +26,8 @@ def drone_task():
             # use_item(Items.Fertilizer)
             if get_water() < 0.70 and num_items(Items.Water) > 1000:
                 use_item(Items.Water)
+        if count and num_items(Items.Wood) > count:
+            break
 
         move(North)
 
@@ -38,7 +40,7 @@ def planting_trees(need_count):
         if spawn_drone(drone_task):
             move(East)
         else:
-            drone_task()
+            drone_task(need_count)
 
 
 def main():

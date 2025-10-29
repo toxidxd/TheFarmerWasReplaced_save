@@ -27,6 +27,7 @@ while True:
 
     if num_items(Items.Carrot) < need_carrot_count:
         print('Carrots')
+        print(need_carrot_count)
         grow_carrot.planting_carrot(need_carrot_count)
 
     if num_items(Items.Pumpkin) < need_pumpkin_count:
@@ -34,7 +35,7 @@ while True:
         grow_pumpkin.planting_pumpkin(need_pumpkin_count)
 
     if num_items(Items.Cactus) < need_cactus_count:
-        print('Cactus')
+        print(need_cactus_count)
         clear()
         grow_till_field.go_till()
 

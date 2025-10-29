@@ -13,12 +13,13 @@ from __builtins__ import *
 #             harvest()
 #             move(North)
 #         move(East)
-def drone_task():
+def drone_task(count = None):
     # for _ in range(get_world_size()):
     while True:
         harvest()
         move(North)
-
+        if count and num_items(Items.Hay) > count:
+            break
 
 def planting_grass(need_count=0):
     clear()
@@ -27,7 +28,7 @@ def planting_grass(need_count=0):
         if spawn_drone(drone_task):
             move(East)
         else:
-            drone_task()
+            drone_task(need_count)
 
 
 def main():
