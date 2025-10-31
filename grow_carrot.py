@@ -5,6 +5,9 @@ import grow_till_field
 def drone_task(count = None):
     # for _ in range(get_world_size()):
     while True:
+        if num_items(Items.Hay) < 1000 or num_items(Items.Wood) < 1000:
+            break
+
         if can_harvest():
             harvest()
         plant(Entities.Carrot)
@@ -24,6 +27,9 @@ def planting_carrot(need_count=0):
             move(East)
         else:
             drone_task(need_count)
+
+        if num_items(Items.Hay) < 1000 or num_items(Items.Wood) < 1000:
+            break
 
 
 def main():

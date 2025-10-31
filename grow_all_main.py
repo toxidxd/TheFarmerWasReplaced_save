@@ -11,7 +11,7 @@ need_hay_count = 1000000
 need_wood_count = 1000000
 need_carrot_count = 1000000
 need_pumpkin_count = 1000000
-need_cactus_count = 1000000
+need_cactus_count = 100000
 need_power_count = 10000
 
 # set_world_size(10)
@@ -47,9 +47,9 @@ while True:
                 move(East)
 
     else:
-        need_hay_count *= 10
-        need_wood_count *= 10
-        need_carrot_count *= 10
-        need_pumpkin_count *= 10
-        need_cactus_count *= 10
-        need_power_count *= 10
+        need_hay_count *= 1.2
+        need_wood_count *= 1.2
+        need_carrot_count *= 1.2
+        need_pumpkin_count *= 1.2
+        need_cactus_count *= 1.2
+        need_power_count *= 1.2

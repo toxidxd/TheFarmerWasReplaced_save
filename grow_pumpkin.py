@@ -6,6 +6,8 @@ def drone_task(count = None):
     change_hat(Hats.Pumpkin_Hat)
 
     while True:
+        if num_items(Items.Carrot) < 1000:
+            break
 
         for _ in range(get_world_size()*3):
             if get_entity_type() != Entities.Pumpkin:
@@ -39,6 +41,8 @@ def planting_pumpkin(need_count=0):
             move(East)
         else:
             drone_task()
+        if num_items(Items.Carrot) < 1000:
+            break
 
 
 def main():
