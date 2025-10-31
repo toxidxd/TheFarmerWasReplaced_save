@@ -35,16 +35,9 @@ while True:
         grow_pumpkin.planting_pumpkin(need_pumpkin_count)
 
     if num_items(Items.Cactus) < need_cactus_count:
-        print(need_cactus_count)
-        clear()
+        print('Cactus')
         grow_till_field.go_till()
-
-        while num_items(Items.Cactus) < need_cactus_count:
-            if num_items(Items.Pumpkin) < 1000:
-                break
-
-            if spawn_drone(grow_cactus.planting_cactus):
-                move(East)
+        grow_cactus.planting_cactus(need_cactus_count)
 
     else:
         need_hay_count *= 1.2
