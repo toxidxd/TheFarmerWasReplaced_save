@@ -2,14 +2,17 @@ from __builtins__ import *
 import grow_till_field
 
 
-def drone_task(count = None):
+def drone_task(count=None):
     change_hat(Hats.Pumpkin_Hat)
 
     while True:
+        if count and num_items(Items.Pumpkin) > count:
+            break
+
         if num_items(Items.Carrot) < 1000:
             break
 
-        for _ in range(get_world_size()*3):
+        for _ in range(get_world_size() * 3):
             if get_entity_type() != Entities.Pumpkin:
                 plant(Entities.Pumpkin)
             elif get_entity_type() == Entities.Dead_Pumpkin:
@@ -32,6 +35,7 @@ def drone_task(count = None):
 
             move(North)
 
+
 def planting_pumpkin(need_count=0):
     harvest()
     clear()
@@ -40,7 +44,7 @@ def planting_pumpkin(need_count=0):
         if spawn_drone(drone_task):
             move(East)
         else:
-            drone_task()
+            drone_task(need_count)
         if num_items(Items.Carrot) < 1000:
             break
 

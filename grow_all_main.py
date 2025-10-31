@@ -40,9 +40,9 @@ while True:
         grow_cactus.planting_cactus(need_cactus_count)
 
     else:
-        need_hay_count *= 1.2
-        need_wood_count *= 1.2
-        need_carrot_count *= 1.2
-        need_pumpkin_count *= 1.2
-        need_cactus_count *= 1.2
-        need_power_count *= 1.2
+        need_hay_count *= 1.5
+        need_wood_count *= 1.5
+        need_carrot_count *= 1.5
+        need_pumpkin_count *= 1.5
+        need_cactus_count *= 1.5
+        need_power_count *= 1.5
