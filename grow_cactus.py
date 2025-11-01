@@ -25,7 +25,7 @@ def drone_task_grow(count=None):
 
 
 def drone_task_sort(count=None):
-    for _ in range(get_world_size()):
+    for _ in range(get_world_size()/2):
         for _ in range(get_world_size()):
             sort_cactus()
             move(North)
