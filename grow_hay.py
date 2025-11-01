@@ -1,5 +1,5 @@
 from __builtins__ import *
-
+from random_hat import get_random_hat
 
 # clear()
 # pet_the_piggy()
@@ -15,6 +15,8 @@ from __builtins__ import *
 #         move(East)
 def drone_task(count = None):
     # for _ in range(get_world_size()):
+    change_hat(get_random_hat())
+
     while True:
         harvest()
         move(North)
@@ -23,7 +25,6 @@ def drone_task(count = None):
 
 def planting_grass(need_count=0):
     clear()
-    change_hat(Hats.Cactus_Hat)
     while num_items(Items.Hay) < need_count:
         if spawn_drone(drone_task):
             move(East)
