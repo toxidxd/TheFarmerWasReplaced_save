@@ -51,9 +51,10 @@ def explore_option(direction):
 
 while True:
     clear()
-    set_world_size(10)
+    change_hat(Hats.Pumpkin_Hat)
+    set_world_size(12)
     plant(Entities.Bush)
-    substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
+    substance = get_world_size() * 2 ** (num_unlocked(Unlocks.Mazes) - 1)
     use_item(Items.Weird_Substance, substance)
 
     for direction in ALL_DIRECTIONS:
