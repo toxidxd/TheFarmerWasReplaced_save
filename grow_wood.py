@@ -1,5 +1,6 @@
 from __builtins__ import *
 import grow_till_field
+from random_hat import get_random_hat
 
 
 def is_even(n):
@@ -7,7 +8,7 @@ def is_even(n):
 
 
 def drone_task(count = None):
-    change_hat(Hats.Traffic_Cone)
+    change_hat(get_random_hat())
 
     while True:
 

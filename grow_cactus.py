@@ -1,5 +1,6 @@
 from __builtins__ import *
 import grow_till_field
+from random_hat import get_random_hat
 
 
 def sort_cactus():
@@ -17,6 +18,7 @@ def sort_cactus():
 
 
 def drone_task_grow(count=None):
+    change_hat(get_random_hat())
     for _ in range(get_world_size()):
         plant(Entities.Cactus)
         if get_water() < 0.70 and num_items(Items.Water) > 1000:
@@ -25,6 +27,8 @@ def drone_task_grow(count=None):
 
 
 def drone_task_sort(count=None):
+    change_hat(get_random_hat())
+
     for _ in range(get_world_size()/2):
         for _ in range(get_world_size()):
             sort_cactus()
@@ -33,6 +37,8 @@ def drone_task_sort(count=None):
 
 
 def drone_task_harvest(count=None):
+    change_hat(get_random_hat())
+
     for _ in range(get_world_size()):
         if can_harvest():
             harvest()

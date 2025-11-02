@@ -1,9 +1,10 @@
 from __builtins__ import *
 import grow_till_field
+from random_hat import get_random_hat
 
 
 def drone_task(count=None):
-    change_hat(Hats.Pumpkin_Hat)
+    change_hat(get_random_hat())
 
     while True:
         if count and num_items(Items.Pumpkin) > count:
