@@ -32,7 +32,7 @@ def move_to_y(new_y):
 
 
 def main():
-    # set_world_size(6)
+    set_world_size(16)
     # set_execution_speed(3)
     do_a_flip()
     change_hat(Hats.Dinosaur_Hat)
