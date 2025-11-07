@@ -13,28 +13,68 @@ def drone_task(count=None):
         if num_items(Items.Carrot) < 1000:
             break
 
-        for _ in range(get_world_size() * 3):
-            if get_entity_type() != Entities.Pumpkin:
-                plant(Entities.Pumpkin)
-            elif get_entity_type() == Entities.Dead_Pumpkin:
-                plant(Entities.Pumpkin)
+        # for _ in range(get_world_size()):
+        if get_entity_type() != Entities.Pumpkin:
+            plant(Entities.Pumpkin)
 
-            if get_water() < 0.70 and num_items(Items.Water) > 1000:
-                use_item(Items.Water)
+        elif get_entity_type() == Entities.Dead_Pumpkin:
+            plant(Entities.Pumpkin)
 
-            move(North)
+        if get_water() < 0.70 and num_items(Items.Water) > 1000:
+            use_item(Items.Water)
 
-        for _ in range(get_world_size()):
-            if get_entity_type() != Entities.Pumpkin:
-                plant(Entities.Pumpkin)
-            elif can_harvest():
-                harvest()
-                plant(Entities.Pumpkin)
+        move(North)
 
-            if get_water() < 0.70 and num_items(Items.Water) > 1000:
-                use_item(Items.Water)
+        # for _ in range(get_world_size()):
+        #     if get_entity_type() != Entities.Pumpkin:
+        #         plant(Entities.Pumpkin)
+        #     elif can_harvest():
+        #         harvest()
+        #         plant(Entities.Pumpkin)
+        #
+        #     if get_water() < 0.70 and num_items(Items.Water) > 1000:
+        #         use_item(Items.Water)
+        #
+        #     move(North)
 
-            move(North)
+
+def main_drone_task(count=None):
+    change_hat(get_random_hat())
+
+    while True:
+        if count and num_items(Items.Pumpkin) > count:
+            break
+
+        if num_items(Items.Carrot) < 1000:
+            break
+
+        # for _ in range(get_world_size()):
+        if get_entity_type() != Entities.Pumpkin:
+            plant(Entities.Pumpkin)
+
+        elif get_entity_type() == Entities.Dead_Pumpkin:
+            plant(Entities.Pumpkin)
+
+        if get_water() < 0.70 and num_items(Items.Water) > 1000:
+            use_item(Items.Water)
+
+        if measure() == measure(East):
+            harvest()
+            plant(Entities.Pumpkin)
+
+        move(North)
+
+        # for _ in range(get_world_size()):
+        #     if get_entity_type() != Entities.Pumpkin:
+        #         plant(Entities.Pumpkin)
+        #     elif can_harvest():
+        #         harvest()
+        #         plant(Entities.Pumpkin)
+        #
+        #     if get_water() < 0.70 and num_items(Items.Water) > 1000:
+        #         use_item(Items.Water)
+        #
+        #     move(North)
 
 
 def planting_pumpkin(need_count=0):
@@ -45,7 +85,7 @@ def planting_pumpkin(need_count=0):
         if spawn_drone(drone_task):
             move(East)
         else:
-            drone_task(need_count)
+            main_drone_task(need_count)
         if num_items(Items.Carrot) < 1000:
             break
 
