@@ -13,23 +13,38 @@ def drone_task(count = None):
     while True:
 
         if is_even(get_pos_x()) and not is_even(get_pos_y()):
+            if get_water() < 0.70 and num_items(Items.Water) > 1000:
+                use_item(Items.Water)
             if can_harvest():
                 harvest()
             plant(Entities.Tree)
+            plant_type, (x, y) = get_companion()
+            move(North)
+            if get_pos_y() == y and get_pos_x() == x:
+                if can_harvest():
+                    harvest()
+                plant(plant_type)
             # use_item(Items.Fertilizer)
-            if get_water() < 0.70 and num_items(Items.Water) > 1000:
-                use_item(Items.Water)
+
 
         elif not is_even(get_pos_x()) and is_even(get_pos_y()):
+            if get_water() < 0.70 and num_items(Items.Water) > 1000:
+                use_item(Items.Water)
             if can_harvest():
                 harvest()
             plant(Entities.Tree)
+            plant_type, (x, y) = get_companion()
+            move(North)
+            if get_pos_y() == y and get_pos_x() == x:
+                if can_harvest():
+                    harvest()
+                plant(plant_type)
             # use_item(Items.Fertilizer)
-            if get_water() < 0.70 and num_items(Items.Water) > 1000:
-                use_item(Items.Water)
+
         if count and num_items(Items.Wood) > count:
             break
-
+        if get_water() < 0.70 and num_items(Items.Water) > 1000:
+            use_item(Items.Water)
         move(North)
 
 
@@ -46,7 +61,7 @@ def planting_trees(need_count):
 
 def main():
     print('Wood')
-    planting_trees(1000000000)
+    planting_trees(10000000000)
 
 
 if __name__ == '__main__':
