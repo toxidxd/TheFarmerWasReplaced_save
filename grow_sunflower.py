@@ -4,11 +4,10 @@ from random_hat import get_random_hat
 
 
 def drone_task():
-    # for _ in range(get_world_size()):
     change_hat(get_random_hat())
     while True:
-        # if can_harvest():
-        harvest()
+        if can_harvest():
+            harvest()
         plant(Entities.Sunflower)
         if get_water() < 0.70 and num_items(Items.Water) > 1000:
             use_item(Items.Water)
