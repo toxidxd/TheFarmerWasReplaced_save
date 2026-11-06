@@ -8,10 +8,10 @@ import grow_till_field
 from __builtins__ import *
 
 need_hay_count = 1000000
-need_wood_count = 1000000
+need_wood_count = 10000000
 need_carrot_count = 1000000
 need_pumpkin_count = 1000000
-need_cactus_count = 100000
+need_cactus_count = 1000000
 need_power_count = 10000
 
 # set_world_size(10)

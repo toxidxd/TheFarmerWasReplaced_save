@@ -42,7 +42,7 @@ def prep_dino():
     hat_flip()
 
 
-# set_world_size(12)
+set_world_size(8)
 world_size = get_world_size()
 go_to_origin()
 hat_flip()
